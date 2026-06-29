@@ -1,0 +1,85 @@
+<header class="site-header">
+
+    <div class="container">
+
+        <a href="{% url 'home' %}" class="logo">
+
+            <div class="logo-icon">
+                📚
+            </div>
+
+            <div class="logo-text">
+                <h1>Biblioteca Comunitaria</h1>
+                <span>La Gomera</span>
+            </div>
+
+        </a>
+
+        <button
+            class="menu-toggle"
+            id="menu-toggle"
+            aria-label="Abrir menú">
+
+            ☰
+
+        </button>
+
+        <nav class="main-nav" id="main-nav">
+
+            <ul>
+
+                <li>
+                    <a href="{% url 'home' %}" class="active">
+                        Inicio
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        Catálogo
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        Autores
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        Actividades
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        Nosotros
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        Contacto
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+        <div class="header-actions">
+
+            <a href="#" class="btn btn-secondary">
+                Iniciar sesión
+            </a>
+
+            <a href="#" class="btn btn-primary">
+                Buscar libros
+            </a>
+
+        </div>
+
+    </div>
+
+</header>

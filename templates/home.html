@@ -1,0 +1,567 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Inicio | Biblioteca Comunitaria La Gomera
+{% endblock %}
+
+{% block content %}
+
+<!-- ==========================================
+                HERO
+=========================================== -->
+
+<section class="hero">
+
+    <div class="container hero-content">
+
+        <div class="hero-text">
+
+            <span class="hero-tag">
+                📚 Bienvenidos a nuestra biblioteca
+            </span>
+
+            <h1>
+                Descubre un mundo de historias,
+                conocimiento y aprendizaje.
+            </h1>
+
+            <p>
+
+                La Biblioteca Comunitaria La Gomera es un espacio abierto para
+                lectores de todas las edades. Promovemos la educación, la cultura
+                y el acceso libre al conocimiento para fortalecer nuestra comunidad.
+
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#" class="btn btn-primary">
+                    Explorar catálogo
+                </a>
+
+                <a href="#" class="btn btn-secondary">
+                    Conoce nuestros servicios
+                </a>
+
+            </div>
+
+            <div class="hero-stats">
+
+                <div class="stat">
+
+                    <h3>5,000+</h3>
+
+                    <span>Libros</span>
+
+                </div>
+
+                <div class="stat">
+
+                    <h3>1,200+</h3>
+
+                    <span>Lectores</span>
+
+                </div>
+
+                <div class="stat">
+
+                    <h3>50+</h3>
+
+                    <span>Actividades</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="hero-image">
+
+            <img
+                src="{% static 'images/library-hero.jpg' %}"
+                alt="Biblioteca Comunitaria La Gomera">
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+            SERVICIOS
+=========================================== -->
+
+<section class="services">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span class="section-tag">
+                Nuestros servicios
+            </span>
+
+            <h2>
+
+                Mucho más que una biblioteca
+
+            </h2>
+
+            <p>
+
+                Ofrecemos espacios y recursos para fomentar la lectura,
+                el aprendizaje y la convivencia dentro de nuestra comunidad.
+
+            </p>
+
+        </div>
+
+        <div class="services-grid">
+
+            <article class="service-card">
+
+                <div class="service-icon">
+                    📖
+                </div>
+
+                <h3>
+
+                    Préstamo de libros
+
+                </h3>
+
+                <p>
+
+                    Accede a una amplia colección de literatura,
+                    ciencia, historia, tecnología y mucho más.
+
+                </p>
+
+            </article>
+
+            <article class="service-card">
+
+                <div class="service-icon">
+                    👨‍👩‍👧‍👦
+                </div>
+
+                <h3>
+
+                    Actividades comunitarias
+
+                </h3>
+
+                <p>
+
+                    Talleres, clubes de lectura,
+                    cuentacuentos y eventos culturales para todas las edades.
+
+                </p>
+
+            </article>
+
+            <article class="service-card">
+
+                <div class="service-icon">
+                    💻
+                </div>
+
+                <h3>
+
+                    Consulta digital
+
+                </h3>
+
+                <p>
+
+                    Accede a recursos digitales y consulta el catálogo
+                    desde cualquier lugar.
+
+                </p>
+
+            </article>
+
+            <article class="service-card">
+
+                <div class="service-icon">
+                    🎓
+                </div>
+
+                <h3>
+
+                    Espacios de estudio
+
+                </h3>
+
+                <p>
+
+                    Áreas cómodas y silenciosas para estudiar,
+                    investigar o trabajar en equipo.
+
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+            LIBROS DESTACADOS
+=========================================== -->
+
+<section class="featured-books">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span class="section-tag">
+                Colección destacada
+            </span>
+
+            <h2>
+                Libros recomendados
+            </h2>
+
+            <p>
+                Descubre algunos de los títulos más populares disponibles en nuestra biblioteca.
+            </p>
+
+        </div>
+
+        <div class="books-grid">
+
+            <article class="book-card">
+
+                <img src="{% static 'images/books/Quijote.jpg' %}"
+                     alt="Don Quijote de la Mancha">
+
+                <div class="book-content">
+
+                    <span class="book-category">
+                        Literatura Clásica
+                    </span>
+
+                    <h3>Don Quijote de la Mancha</h3>
+
+                    <p>
+                        Miguel de Cervantes
+                    </p>
+
+                    <a href="#" class="btn btn-outline">
+                        Ver información
+                    </a>
+
+                </div>
+
+            </article>
+
+            <article class="book-card">
+
+                <img src="{% static 'images/books/Cien_Años.jpg' %}"
+                     alt="Cien años de soledad">
+
+                <div class="book-content">
+
+                    <span class="book-category">
+                        Novela
+                    </span>
+
+                    <h3>Cien años de soledad</h3>
+
+                    <p>
+                        Gabriel García Márquez
+                    </p>
+
+                    <a href="#" class="btn btn-outline">
+                        Ver información
+                    </a>
+
+                </div>
+
+            </article>
+
+            <article class="book-card">
+
+                <img src="{% static 'images/books/Principito.jpg' %}"
+                     alt="El Principito">
+
+                <div class="book-content">
+
+                    <span class="book-category">
+                        Infantil
+                    </span>
+
+                    <h3>El Principito</h3>
+
+                    <p>
+                        Antoine de Saint-Exupéry
+                    </p>
+
+                    <a href="#" class="btn btn-outline">
+                        Ver información
+                    </a>
+
+                </div>
+
+            </article>
+
+            <article class="book-card">
+
+                <img src="{% static 'images/books/Hábitos_Atómicos.jpg' %}"
+                     alt="Hábitos Atómicos">
+
+                <div class="book-content">
+
+                    <span class="book-category">
+                        Desarrollo Personal
+                    </span>
+
+                    <h3>Hábitos Atómicos</h3>
+
+                    <p>
+                        James Clear
+                    </p>
+
+                    <a href="#" class="btn btn-outline">
+                        Ver información
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+            PRÓXIMOS EVENTOS
+=========================================== -->
+
+<section class="events">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span class="section-tag">
+                Comunidad
+            </span>
+
+            <h2>
+                Próximos eventos
+            </h2>
+
+            <p>
+                Participa en nuestras actividades y forma parte de una comunidad apasionada por la lectura.
+            </p>
+
+        </div>
+
+        <div class="events-grid">
+
+            <article class="event-card">
+
+                <div class="event-date">
+
+                    <span class="day">
+                        15
+                    </span>
+
+                    <span class="month">
+                        JUL
+                    </span>
+
+                </div>
+
+                <div class="event-content">
+
+                    <span class="event-type">
+                        Club de lectura
+                    </span>
+
+                    <h3>
+                        Conversatorio sobre literatura latinoamericana
+                    </h3>
+
+                    <p>
+
+                        Compartiremos opiniones y reflexiones sobre obras de autores
+                        latinoamericanos contemporáneos.
+
+                    </p>
+
+                    <div class="event-info">
+
+                        <span>🕒 4:00 PM</span>
+
+                        <span>📍 Sala Principal</span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            <article class="event-card">
+
+                <div class="event-date">
+
+                    <span class="day">
+                        22
+                    </span>
+
+                    <span class="month">
+                        JUL
+                    </span>
+
+                </div>
+
+                <div class="event-content">
+
+                    <span class="event-type">
+                        Taller
+                    </span>
+
+                    <h3>
+                        Escritura creativa para jóvenes
+                    </h3>
+
+                    <p>
+
+                        Aprende técnicas para desarrollar historias,
+                        personajes y narraciones creativas.
+
+                    </p>
+
+                    <div class="event-info">
+
+                        <span>🕒 10:00 AM</span>
+
+                        <span>📍 Aula Cultural</span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            <article class="event-card">
+
+                <div class="event-date">
+
+                    <span class="day">
+                        05
+                    </span>
+
+                    <span class="month">
+                        AGO
+                    </span>
+
+                </div>
+
+                <div class="event-content">
+
+                    <span class="event-type">
+                        Infantil
+                    </span>
+
+                    <h3>
+                        Hora del cuento
+                    </h3>
+
+                    <p>
+
+                        Actividad para niños con lectura de cuentos,
+                        juegos educativos y dinámicas familiares.
+
+                    </p>
+
+                    <div class="event-info">
+
+                        <span>🕒 9:30 AM</span>
+
+                        <span>📍 Área Infantil</span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+            NEWSLETTER
+=========================================== -->
+
+<section class="newsletter">
+
+    <div class="container">
+
+        <div class="newsletter-card">
+
+            <div class="newsletter-content">
+
+                <span class="section-tag">
+                    Mantente informado
+                </span>
+
+                <h2>
+                    Recibe nuestras novedades
+                </h2>
+
+                <p>
+
+                    Suscríbete para conocer los nuevos libros disponibles,
+                    actividades culturales, clubes de lectura y eventos de la
+                    Biblioteca Comunitaria La Gomera.
+
+                </p>
+
+            </div>
+
+            <form class="newsletter-form" method="post">
+
+                {% csrf_token %}
+
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Ingresa tu correo electrónico"
+                    required>
+
+                <button
+                    type="submit"
+                    class="btn btn-primary">
+
+                    Suscribirme
+
+                </button>
+
+            </form>
+
+            <small class="newsletter-note">
+
+                Respetamos tu privacidad. Solo enviaremos información relacionada
+                con la biblioteca y nunca compartiremos tu correo electrónico.
+
+            </small>
+
+        </div>
+
+    </div>
+
+</section>
+{% endblock %}
