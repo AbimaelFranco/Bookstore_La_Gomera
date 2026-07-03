@@ -2499,3 +2499,25 @@ footer#footer {
   line-height: 1.7;
 
 }
+
+.display-1 {
+
+  font-size: 8rem;
+
+  color: #74642F;
+
+}
+
+.btn-outline-dark {
+
+  border: 2px solid #74642F;
+  color: #74642F;
+
+}
+
+.btn-outline-dark:hover {
+
+  background: #74642F;
+  color: white;
+
+}

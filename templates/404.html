@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<section class="py-5 my-5">
+
+    <div class="container">
+
+        <div class="row justify-content-center align-items-center">
+
+            <div class="col-lg-5 text-center mb-5 mb-lg-0">
+
+                <img
+                    src="{% static 'images/404_image.webp' %}"
+                    class="img-fluid"
+                    alt="Página no encontrada"
+                >
+
+            </div>
+
+            <div class="col-lg-6">
+
+                <h1 class="display-1 fw-bold">
+                    404
+                </h1>
+
+                <h2 class="mb-4">
+                    Parece que este libro no está en nuestros estantes...
+                </h2>
+
+                <p class="lead text-muted mb-4">
+
+                    La página que buscas no existe, fue movida o el enlace ya no está disponible.
+
+                </p>
+
+                <a
+                    href="{% url 'home' %}"
+                    class="btn btn-dark btn-lg me-3">
+
+                    Inicio
+
+                </a>
+
+                <a
+                    href="{% url 'catalogo' %}"
+                    class="btn btn-outline-dark btn-lg">
+
+                    Explorar catálogo
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

@@ -17,6 +17,8 @@ class LibroAdmin(admin.ModelAdmin):
         "estado_fisico",
     )
 
+    list_display_links = ("titulo",)
+
     search_fields = (
         "codigo",
         "titulo",

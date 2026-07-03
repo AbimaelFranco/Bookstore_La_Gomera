@@ -55,6 +55,8 @@ JAZZMIN_SETTINGS = {
     "site_header": "Biblioteca Comunitaria",
     "site_brand": "La Gomera",
 
+    "site_logo": "images/main-logo.png",
+    "login_logo": "images/main-logo.png",
     "welcome_sign": "Bienvenido al panel",
 
     "copyright": "Biblioteca Comunitaria La Gomera",
@@ -134,7 +136,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-es'
 
 TIME_ZONE = 'UTC'
 
