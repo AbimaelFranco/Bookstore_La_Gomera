@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,7 +42,34 @@ INSTALLED_APPS = [
 
     # My apps
     'core',
+    'catalogo',
 ]
+
+JAZZMIN_UI_TWEAKS = {
+    "theme": "yeti",
+}
+
+JAZZMIN_SETTINGS = {
+    
+    "site_title": "Biblioteca",
+    "site_header": "Biblioteca Comunitaria",
+    "site_brand": "La Gomera",
+
+    "welcome_sign": "Bienvenido al panel",
+
+    "copyright": "Biblioteca Comunitaria La Gomera",
+
+    "show_sidebar": True,
+    "navigation_expanded": True,
+
+    "icons": {
+        "auth.User": "fas fa-user",
+
+        "books.Book": "fas fa-book",
+        "books.Author": "fas fa-pen",
+        "books.Category": "fas fa-tags",
+    },
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
