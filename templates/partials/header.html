@@ -1,85 +1,62 @@
-<header class="site-header">
+{% load static %}
 
-    <div class="container">
+<header id="header">
+    <div class="container-fluid">
+        <div class="row">
 
-        <a href="{% url 'home' %}" class="logo">
+            <div class="col-md-2">
+                <div class="main-logo">
+                    <a href="index.html"><img src="{% static 'images/main-logo.png' %}" alt="logo"></a>
+                </div>
 
-            <div class="logo-icon">
-                📚
             </div>
 
-            <div class="logo-text">
-                <h1>Biblioteca Comunitaria</h1>
-                <span>La Gomera</span>
+            <div class="col-md-10">
+
+                <nav id="navbar">
+                    <div class="main-menu stellarnav">
+                        <ul class="menu-list">
+                            <li class="menu-item active"><a href="#home">Home</a></li>
+                            <li class="menu-item"><a href="#featured-books" class="nav-link">Catálogo</a></li>
+                            <li class="menu-item"><a href="#featured-books" class="nav-link">Servicios</a></li>
+                            <li class="menu-item has-sub">
+                                <a href="#pages" class="nav-link">Nosotros</a>
+
+                                <ul>
+                                    <li class="active"><a href="index.html">Historia</a></li>
+                                    <li><a href="index.html">Mision</a></li>
+                                    <li><a href="index.html">Vision</a></li>
+                                    <li><a href="index.html">Valores</a></li>
+                                </ul>
+
+                            </li>
+                            <li class="menu-item"><a href="#popular-books" class="nav-link">Articulos</a></li>
+                            <li class="menu-item"><a href="#" class="nav-link"><i class="icon icon-user"></i><span>Cuenta</span></a></li>
+                            
+                            <div class="action-menu">
+                                <div class="search-bar">
+                                    <a href="#" class="search-button search-toggle" data-selector="#header-wrap">
+                                        <i class="icon icon-search"></i>
+                                    </a>
+                                    <form role="search" method="get" class="search-box">
+                                        <input class="search-field text search-input" placeholder="Search"
+                                            type="search">
+                                    </form>
+                                </div>
+                            </div>
+                        </ul>
+
+                        <div class="hamburger">
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                        </div>
+
+                    </div>
+                </nav>
+
             </div>
-
-        </a>
-
-        <button
-            class="menu-toggle"
-            id="menu-toggle"
-            aria-label="Abrir menú">
-
-            ☰
-
-        </button>
-
-        <nav class="main-nav" id="main-nav">
-
-            <ul>
-
-                <li>
-                    <a href="{% url 'home' %}" class="active">
-                        Inicio
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        Catálogo
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        Autores
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        Actividades
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        Nosotros
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        Contacto
-                    </a>
-                </li>
-
-            </ul>
-
-        </nav>
-
-        <div class="header-actions">
-
-            <a href="#" class="btn btn-secondary">
-                Iniciar sesión
-            </a>
-
-            <a href="#" class="btn btn-primary">
-                Buscar libros
-            </a>
 
         </div>
-
     </div>
-
 </header>
