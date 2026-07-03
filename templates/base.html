@@ -37,7 +37,9 @@
          HEADER
     ========================== -->
 
-    {% include 'partials/header.html' %}
+    {% with current_url=request.resolver_match.url_name %}
+        {% include "partials/header.html" %}
+    {% endwith %}
 
     <!-- =========================
          CONTENIDO

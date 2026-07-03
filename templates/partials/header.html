@@ -6,51 +6,65 @@
 
             <div class="col-md-2">
                 <div class="main-logo">
-                    <a href="index.html"><img src="{% static 'images/main-logo.png' %}" alt="logo"></a>
+                    <a href="{% url 'home' %}">
+                        <img src="{% static 'images/main-logo.png' %}" alt="Biblioteca Comunitaria">
+                    </a>
                 </div>
-
             </div>
 
             <div class="col-md-10">
 
                 <nav id="navbar">
                     <div class="main-menu stellarnav">
+
                         <ul class="menu-list">
-                            <li class="menu-item active"><a href="{% url 'home' %}">Home</a></li>
-                            <li class="menu-item"><a href="{% url 'catalogo' %}" class="nav-link">Catálogo</a></li>
-                            <li class="menu-item"><a href="#featured-books" class="nav-link">Servicios</a></li>
-                            <li class="menu-item has-sub">
-                                <a href="#pages" class="nav-link">Nosotros</a>
+
+                            <li class="menu-item {% if current_url == 'home' %}active{% endif %}">
+                                <a href="{% url 'home' %}">Inicio</a>
+                            </li>
+
+                            <li class="menu-item {% if current_url == 'catalogo' or current_url == 'detalle_libro' %}active{% endif %}">
+                                <a href="{% url 'catalogo' %}">Catálogo</a>
+                            </li>
+
+                            <li class="menu-item {% if current_url == 'servicios' %}active{% endif %}">
+                                <a href="{% url 'home' %}#featured-books">Servicios</a>
+                            </li>
+
+                            <li class="menu-item has-sub {% if current_url == 'historia' or current_url == 'mision' or current_url == 'vision' or current_url == 'valores' %}active{% endif %}">
+                                <a href="#">Nosotros</a>
 
                                 <ul>
-                                    <li class="active"><a href="index.html">Historia</a></li>
-                                    <li><a href="index.html">Mision</a></li>
-                                    <li><a href="index.html">Vision</a></li>
-                                    <li><a href="index.html">Valores</a></li>
+                                    <li class="{% if current_url == 'historia' %}active{% endif %}">
+                                        <a href="#">Historia</a>
+                                    </li>
+
+                                    <li class="{% if current_url == 'mision' %}active{% endif %}">
+                                        <a href="#">Misión</a>
+                                    </li>
+
+                                    <li class="{% if current_url == 'vision' %}active{% endif %}">
+                                        <a href="#">Visión</a>
+                                    </li>
+
+                                    <li class="{% if current_url == 'valores' %}active{% endif %}">
+                                        <a href="#">Valores</a>
+                                    </li>
                                 </ul>
-
                             </li>
-                            <li class="menu-item"><a href="#featured-books" class="nav-link">Articulos</a></li>
-                            <li class="menu-item"><a href="#" class="nav-link"><i class="icon icon-user"></i><span>Cuenta</span></a></li>
-                            
-                            <div class="action-menu">
-                                <div class="search-bar">
-                                    <a href="#" class="search-button search-toggle" data-selector="#header-wrap">
-                                        <i class="icon icon-search"></i>
-                                    </a>
-                                    <form role="search" method="get" class="search-box">
-                                        <input class="search-field text search-input" placeholder="Search"
-                                            type="search">
-                                    </form>
-                                </div>
-                            </div>
-                        </ul>
 
-                        <div class="hamburger">
-                            <span class="bar"></span>
-                            <span class="bar"></span>
-                            <span class="bar"></span>
-                        </div>
+                            <li class="menu-item {% if current_url == 'articulos' %}active{% endif %}">
+                                <a href="#">Artículos</a>
+                            </li>
+
+                            <li class="menu-item {% if current_url == 'login' %}active{% endif %}">
+                                <a href="#">
+                                    <i class="icon icon-user"></i>
+                                    <span>Cuenta</span>
+                                </a>
+                            </li>
+
+                        </ul>
 
                     </div>
                 </nav>

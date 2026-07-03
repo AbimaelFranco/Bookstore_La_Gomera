@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section id="popular-books" class="bookshelf py-5 my-5">
+
+    <div class="container">
+
+        <div class="section-header align-center">
+            <h2 class="section-title">
+                Descubre nuevos libros
+            </h2>
+        </div>
+
+        <!-- Categorías -->
+
+		<ul class="nav justify-content-center mb-5">
+
+			<li class="nav-item">
+				<a class="nav-link {% if not categoria_actual %}active{% endif %}"
+				href="{% url 'catalogo' %}">
+					Todos
+				</a>
+			</li>
+
+			{% for categoria in categorias %}
+			<li class="nav-item">
+				<a class="nav-link {% if categoria_actual and categoria_actual.id == categoria.id %}active{% endif %}"
+				href="{% url 'catalogo' %}?categoria={{ categoria.id }}">
+					{{ categoria.nombre }}
+				</a>
+			</li>
+			{% endfor %}
+
+		</ul>
+
+        <!-- Libros -->
+
+        <div class="row">
+
+            {% for libro in page_obj %}
+
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+
+                    <div class="product-item">
+						<a href="{% url 'detalle_libro' libro.codigo %}"> 
+                        <figure class="product-style">
+
+                            {% if libro.portada %}
+                                <img
+                                    src="{{ libro.portada.url }}"
+                                    alt="{{ libro.titulo }}"
+                                    class="product-item product-image"
+                                >
+                            {% endif %}
+
+                            <button
+                                type="button"
+                                class="add-to-cart"
+                            >
+								Ver detalles
+                            </button>
+
+                        </figure>
+
+                        <figcaption>
+
+                            <h3>
+                                {{ libro.titulo }}
+                            </h3>
+
+                        </figcaption>
+
+                    </div>
+					</a>
+                </div>
+
+            {% empty %}
+
+                <div class="col-12 text-center">
+                    <p>No hay libros en esta categoría.</p>
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+        <!-- Paginación -->
+
+        {% if page_obj.has_other_pages %}
+
+        <nav class="mt-5">
+
+            <ul class="pagination justify-content-center">
+
+                {% if page_obj.has_previous %}
+                    <li class="page-item">
+                        <a
+                            class="page-link"
+                            href="?categoria={{ categoria_actual.id }}&page={{ page_obj.previous_page_number }}"
+                        >
+                            Anterior
+                        </a>
+                    </li>
+                {% endif %}
+
+                {% for num in page_obj.paginator.page_range %}
+
+                    <li class="page-item {% if page_obj.number == num %}active{% endif %}">
+                        <a
+                            class="page-link"
+                            href="?categoria={{ categoria_actual.id }}&page={{ num }}"
+                        >
+                            {{ num }}
+                        </a>
+                    </li>
+
+                {% endfor %}
+
+                {% if page_obj.has_next %}
+                    <li class="page-item">
+                        <a
+                            class="page-link"
+                            href="?categoria={{ categoria_actual.id }}&page={{ page_obj.next_page_number }}"
+                        >
+                            Siguiente
+                        </a>
+                    </li>
+                {% endif %}
+
+            </ul>
+
+        </nav>
+
+        {% endif %}
+
+    </div>
+
+</section>
+
+{% endblock %}	

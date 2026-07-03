@@ -10,6 +10,10 @@ class Categoria(models.Model):
         blank=True
     )
 
+    principal = models.BooleanField(
+        default = False
+    )
+
     class Meta:
         verbose_name = "Categoría"
         verbose_name_plural = "Categorías"
@@ -52,7 +56,7 @@ class Libro(models.Model):
 
     editorial = models.CharField(
         max_length=20,
-        default="Desconocida"
+        default=""
     )
 
     categoria = models.ForeignKey(

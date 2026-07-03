@@ -1,0 +1,153 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="single-product py-5">
+
+    <div class="container">
+
+        <div class="row g-5">
+
+            <!-- Portada -->
+
+            <div class="col-lg-4">
+
+                <div class="book-cover">
+
+                    {% if libro.portada %}
+                        <img
+                            src="{{ libro.portada.url }}"
+                            alt="{{ libro.titulo }}"
+                            class="img-fluid"
+                        >
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+            <!-- Información -->
+
+            <div class="col-lg-8">
+
+                <span class="text-muted">
+
+                    {{ libro.categoria }}
+
+                </span>
+
+                <h1 class="display-6 mt-2">
+
+                    {{ libro.titulo }}
+
+                </h1>
+
+                <h4 class="mb-4">
+
+                    {{ libro.autor }}
+
+                </h4>
+
+                <hr>
+
+                <div class="row">
+
+                    <div class="col-md-6">
+
+                        <p>
+
+                            <strong>Código</strong><br>
+
+                            {{ libro.codigo }}
+
+                        </p>
+
+                        <p>
+
+                            <strong>ISBN</strong><br>
+
+                            {{ libro.ISBN }}
+
+                        </p>
+
+                        <p>
+
+                            <strong>Estado</strong><br>
+
+                            {{ libro.estado_fisico }}
+
+                        </p>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <p>
+
+                            <strong>Categoría</strong><br>
+
+                            {{ libro.categoria }}
+
+                        </p>
+
+                        <p>
+
+                            <strong>Disponibles</strong><br>
+
+                            {{ libro.cantidad_disponible }}
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <hr>
+
+                <h4>
+
+                    Resumen
+
+                </h4>
+
+                <p>
+
+                    {{ libro.resumen }}
+
+                </p>
+
+                {% if libro.comentarios %}
+
+                    <hr>
+
+                    <h4>
+
+                        Comentarios
+
+                    </h4>
+
+                    <p>
+
+                        {{ libro.comentarios }}
+
+                    </p>
+
+                {% endif %}
+
+                <a
+                    href="{% url 'catalogo' %}"
+                    class="btn btn-dark mt-3">
+
+                    ← Volver al catálogo
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
