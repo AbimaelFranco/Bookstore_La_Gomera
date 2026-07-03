@@ -26,9 +26,20 @@ class EstadoFisico(models.TextChoices):
 
 class Libro(models.Model):
 
-    codigo = models.PositiveIntegerField(
-        unique=True,
-        verbose_name="Código"
+    # Añadir: Paginas, donador, idioma, fecha publicacion
+
+    codigo = models.BigAutoField(
+    primary_key=True,
+    verbose_name="Código"
+    )
+
+    isbn = models.CharField(
+    max_length=20,
+    unique=True,
+    blank=True,
+    null=True,
+    verbose_name="ISBN",
+    default=None
     )
 
     titulo = models.CharField(
@@ -37,6 +48,11 @@ class Libro(models.Model):
 
     autor = models.CharField(
         max_length=150
+    )
+
+    editorial = models.CharField(
+        max_length=20,
+        default="Desconocida"
     )
 
     categoria = models.ForeignKey(
