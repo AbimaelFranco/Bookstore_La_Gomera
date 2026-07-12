@@ -57,11 +57,78 @@
                                 <a href="#">Artículos</a>
                             </li>
 
-                            <li class="menu-item {% if current_url == 'login' %}active{% endif %}">
+                            <li class="menu-item has-sub {% if current_url == 'login' or current_url == 'registro' or current_url == 'perfil' %}active{% endif %}">
+
                                 <a href="#">
+
                                     <i class="icon icon-user"></i>
-                                    <span>Cuenta</span>
+
+                                    <span>
+
+                                        {% if user.is_authenticated %}
+
+                                            {{ user.first_name }}
+
+                                        {% else %}
+
+                                            Cuenta
+
+                                        {% endif %}
+
+                                    </span>
+
                                 </a>
+
+                                <ul>
+
+                                    {% if user.is_authenticated %}
+
+                                        <li class="{% if current_url == 'perfil' %}active{% endif %}">
+
+                                            <a href="#">
+
+                                                Mi perfil
+
+                                            </a>
+
+                                        </li>
+
+                                        <li>
+
+                                            <a href="{% url 'logout' %}">
+
+                                                Cerrar sesión
+
+                                            </a>
+
+                                        </li>
+
+                                    {% else %}
+
+                                        <li class="{% if current_url == 'login' %}active{% endif %}">
+
+                                            <a href="{% url 'login' %}">
+
+                                                Iniciar sesión
+
+                                            </a>
+
+                                        </li>
+
+                                        <li class="{% if current_url == 'registro' %}active{% endif %}">
+
+                                            <a href="{% url 'registro' %}">
+
+                                                Crear cuenta
+
+                                            </a>
+
+                                        </li>
+
+                                    {% endif %}
+
+                                </ul>
+
                             </li>
 
                         </ul>

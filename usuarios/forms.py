@@ -118,3 +118,25 @@ class RegistroForm(UserCreationForm):
             usuario.save()
 
         return usuario
+    
+class LoginForm(forms.Form):
+
+    username = forms.CharField(
+        label="",
+        widget=forms.TextInput(
+            attrs={
+                "class": "form-control",
+                "placeholder": "Usuario o correo electrónico",
+            }
+        ),
+    )
+
+    password = forms.CharField(
+        label="",
+        widget=forms.PasswordInput(
+            attrs={
+                "class": "form-control",
+                "placeholder": "Contraseña",
+            }
+        ),
+    )

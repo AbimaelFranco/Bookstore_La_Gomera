@@ -1,18 +1,73 @@
 from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
+from django.contrib.auth import logout
 from django.core.mail import send_mail
 from django.shortcuts import render, redirect
-
-from .forms import RegistroForm
-
+from .forms import RegistroForm, LoginForm
 from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 from django.urls import reverse
-
 from email.mime.image import MIMEImage
 import os
+
+def iniciar_sesion(request):
+
+    if request.user.is_authenticated:
+        return redirect("catalogo")
+
+    form = LoginForm()
+
+    if request.method == "POST":
+
+        form = LoginForm(request.POST)
+
+        if form.is_valid():
+
+            usuario = form.cleaned_data["username"]
+            password = form.cleaned_data["password"]
+
+            user = authenticate(
+                request,
+                username=usuario,
+                password=password,
+            )
+
+            if user is not None:
+
+                login(request, user)
+
+                messages.success(
+                    request,
+                    f"¡Bienvenido, {user.first_name}!"
+                )
+
+                return redirect("catalogo")
+
+            messages.error(
+                request,
+                "Usuario o contraseña incorrectos."
+            )
+
+    return render(
+        request,
+        "usuarios/login.html",
+        {
+            "form": form
+        },
+    )
+
+def cerrar_sesion(request):
+
+    logout(request)
+
+    messages.info(
+        request,
+        "Has cerrado sesión correctamente."
+    )
+
+    return redirect("login")
 
 
 def registro(request):
