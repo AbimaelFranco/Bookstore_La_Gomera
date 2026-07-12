@@ -28,7 +28,7 @@ def catalogo(request):
             categoria=categoria_actual
         )
 
-    paginator = Paginator(libros, 4)  # 4 x 5
+    paginator = Paginator(libros, 8)  # 4 x 5
 
     page_number = request.GET.get("page")
 
