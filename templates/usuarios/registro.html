@@ -1,0 +1,204 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-7">
+
+                <div class="card shadow-sm border-0">
+
+                    <div class="card-body p-5">
+
+                        <div class="text-center mb-5">
+
+                            <h2>
+
+                                Crear una cuenta
+
+                            </h2>
+
+                            <p class="text-muted">
+
+                                Únete a la Biblioteca Comunitaria La Gomera
+
+                            </p>
+
+                        </div>
+
+                        <form method="post">
+
+                            {% csrf_token %}
+
+                            <div class="row">
+
+                                <div class="col-md-6 mb-3">
+
+                                    <label class="form-label">
+
+                                        Nombres
+
+                                    </label>
+
+                                    {{ form.first_name }}
+
+                                </div>
+
+                                <div class="col-md-6 mb-3">
+
+                                    <label class="form-label">
+
+                                        Apellidos
+
+                                    </label>
+
+                                    {{ form.last_name }}
+
+                                </div>
+
+                            </div>
+
+                            <div class="mb-3">
+
+                                <label class="form-label">
+
+                                    Nombre de usuario
+
+                                </label>
+
+                                {{ form.username }}
+
+                            </div>
+
+                            <div class="mb-3">
+
+                                <label class="form-label">
+
+                                    Correo electrónico
+
+                                </label>
+
+                                {{ form.email }}
+
+                            </div>
+
+                            <div class="mb-3">
+
+                                <label class="form-label">
+
+                                    Fecha de nacimiento
+
+                                </label>
+
+                                {{ form.fecha_nacimiento }}
+
+                            </div>
+
+                            <div class="mb-3">
+
+                                <label class="form-label">
+
+                                    Comunidad
+
+                                </label>
+
+                                {{ form.comunidad }}
+
+                            </div>
+
+                            <div class="mb-3">
+
+                                <label class="form-label">
+
+                                    Nivel educativo
+
+                                </label>
+
+                                {{ form.nivel_educativo }}
+                            </div>
+
+                            <div class="mb-4">
+
+                                <label class="form-label">
+
+                                    Sexo
+
+                                </label>
+
+                                {{ form.sexo }}
+
+                            </div>
+
+                            <hr class="my-4">
+
+                            <div class="mb-3">
+
+                                <label class="form-label">
+
+                                    Contraseña
+
+                                </label>
+
+                                {{ form.password1 }}
+
+                            </div>
+
+                            <div class="mb-4">
+
+                                <label class="form-label">
+
+                                    Confirmar contraseña
+
+                                </label>
+
+                                {{ form.password2 }}
+
+                            </div>
+
+                            <div class="d-grid">
+
+                                <button
+                                    type="submit"
+                                    class="btn btn-dark btn-lg">
+
+                                    Crear cuenta
+
+                                </button>
+
+                            </div>
+
+                        </form>
+
+                        <div class="text-center mt-4">
+
+                            <p class="mb-0">
+
+                                ¿Ya tienes una cuenta?
+
+                                <a href="{% url 'login' %}">
+
+                                    Iniciar sesión
+
+                                </a>
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

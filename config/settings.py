@@ -189,3 +189,5 @@ CLOUDINARY_STORAGE = {
     "API_KEY": os.environ["CLOUDINARY_API_KEY"],
     "API_SECRET": os.environ["CLOUDINARY_API_SECRET"],
 }
+
+AUTH_USER_MODEL = "usuarios.Usuario"
