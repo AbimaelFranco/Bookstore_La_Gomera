@@ -21,10 +21,13 @@ class Usuario(AbstractUser):
         verbose_name="Correo electrónico"
     )
 
-    fecha_nacimiento = models.DateField()
+    fecha_nacimiento = models.DateField(
+        blank=True
+    )
 
     comunidad = models.CharField(
-        max_length=150
+        max_length=150,
+        blank=True
     )
 
     nivel_educativo = models.CharField(
