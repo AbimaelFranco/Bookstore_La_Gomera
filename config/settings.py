@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     # My apps
     'core',
     'catalogo',
+    'usuarios',
 ]
 
 JAZZMIN_UI_TWEAKS = {
