@@ -22,6 +22,7 @@ class Usuario(AbstractUser):
     )
 
     fecha_nacimiento = models.DateField(
+        null=True,
         blank=True
     )
 
