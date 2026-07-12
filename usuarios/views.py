@@ -2,6 +2,7 @@ from django.contrib import messages
 from django.contrib.auth import login
 from django.core.mail import send_mail
 from django.shortcuts import render, redirect
+import traceback
 
 from django.conf import settings
 
@@ -18,34 +19,40 @@ def registro(request):
 
             usuario = form.save()
 
+            print("Inicio de sesion")
             # Iniciar sesión automáticamente
             login(request, usuario)
 
+            print("Enviando correo")
             # Enviar correo de bienvenida
-            send_mail(
-                subject="Bienvenido a la Biblioteca Comunitaria La Gomera",
+            try:
+                send_mail(
+                    subject="Bienvenido a la Biblioteca Comunitaria La Gomera",
 
-                message=f"""
-Hola {usuario.first_name},
+                    message=f"""
+                    Hola {usuario.first_name},
 
-Tu cuenta ha sido creada correctamente en la Biblioteca Comunitaria La Gomera.
+                    Tu cuenta ha sido creada correctamente en la Biblioteca Comunitaria La Gomera.
 
-Tu nombre de usuario es:
-{usuario.username}
+                    Tu nombre de usuario es:
+                    {usuario.username}
 
-Ya puedes iniciar sesión y explorar nuestro catálogo.
+                    Ya puedes iniciar sesión y explorar nuestro catálogo.
 
-¡Gracias por formar parte de nuestra comunidad!
-""",
+                    ¡Gracias por formar parte de nuestra comunidad!
+                    """,
 
-                from_email=settings.DEFAULT_FROM_EMAIL,
+                    from_email=settings.DEFAULT_FROM_EMAIL,
 
-                recipient_list=[
-                    usuario.email
-                ],
+                    recipient_list=[
+                        usuario.email
+                    ],
 
-                fail_silently=False,
-            )
+                    fail_silently=False,
+                )
+            except Exception as e:
+                print(traceback.format_exc())
+                raise
 
             messages.success(
                 request,
